@@ -129,14 +129,65 @@
 .side-nav {
   list-style: none;
   margin-top: 3.5rem;
+  font-size: 1.4rem;
   &__item {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
   }
-  &__link {
+
+  //HOVER ANIMATION
+  &__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    //Can use transform-origin: center;
+    //or bottom which will make the transformation
+    //start from bottom
+    //cubic bezier for the timing and the aceleration
+    transition: transform 0.2s, width 0.5s cubic-bezier(1, 0, 0, 1) 0.2s,
+      background-color 0.1s;
+    // This is more precise than using transform all
+  }
+  // HOVER ANIMATION TOO
+  // --active for the first element
+  &__item:hover::before,
+  &__item--active::before {
+    transform: scaleY(1);
+    width: 100%;
+  }
+  //
+  // If the element is clicked it should get bit brighter
+  &__item:active::before {
+    background-color: var(--color-primary-light);
+  }
+  &__link:link,
+  &__link:visited {
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+
+    display: flex;
+    align-items: center;
+    //for the z-index to work
+    position: relative;
+    z-index: 10;
   }
 
   &__icon {
     height: 1.75rem;
     width: 1.75rem;
+    margin-right: 2rem;
+    // USE CURRENT TO GET THE COLOR OF THE PARENT
+    fill: currentColor;
   }
 }
 
