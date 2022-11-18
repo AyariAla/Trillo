@@ -233,4 +233,21 @@ body {
   display: block;
 }
 
+.overview {
+  display: flex;
+}
+.overview__heading {
+  display: inline;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.overview__stars {
+  margin-right: auto;
+}
+.overview__icon-star, .overview__icon-location {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: var(--color-primary);
+}
+
 /*# sourceMappingURL=style.css.map */

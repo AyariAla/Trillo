@@ -211,3 +211,40 @@
     display: block;
   }
 }
+
+/////////////////
+/// OVERVIEW
+///
+
+.overview {
+  display: flex;
+
+  &__heading {
+    display: inline;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &__stars {
+    //This item should grow to occupy all available space
+    // flex: 1;
+    margin-right: auto;
+  }
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &__location {
+  }
+
+  &__rating {
+    &-average {
+    }
+
+    &-count {
+    }
+  }
+}
