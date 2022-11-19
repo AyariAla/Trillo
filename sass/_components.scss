@@ -364,3 +364,36 @@
 }
 /// /// /////////////////////
 /// RECOMMEND
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  align-items: center;
+
+  &__count {
+    margin-right: auto;
+  }
+
+  &__friends {
+  }
+
+  &__photo {
+    //the border box will include the border, the padding
+    //into the width and the height of the element
+    // When a border is added it will go inwards not outwards
+    // thus making the image smaller
+    // box-sizing: border-box;
+    // using content box will make the border go outwards
+    //preserving the img size
+    box-sizing: content-box;
+    border-radius: 50%;
+    border: 3px solid #fff;
+
+    height: 4rem;
+    width: 4rem;
+
+    &:not(:last-child) {
+      margin-right: -1.5rem;
+    }
+  }
+}

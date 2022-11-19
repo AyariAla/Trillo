@@ -368,4 +368,24 @@ body {
   -webkit-mask-size: cover;
 }
 
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  align-items: center;
+}
+.recommend__count {
+  margin-right: auto;
+}
+.recommend__photo {
+  box-sizing: content-box;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  height: 4rem;
+  width: 4rem;
+}
+.recommend__photo:not(:last-child) {
+  margin-right: -1.5rem;
+}
+
 /*# sourceMappingURL=style.css.map */
